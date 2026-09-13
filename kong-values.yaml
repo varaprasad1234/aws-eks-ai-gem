@@ -1,0 +1,22 @@
+ingressController:
+  enabled: true
+  installCRDs: false
+
+image:
+  repository: kong
+  tag: "3.4.1"
+
+env:
+  database: "off"
+
+proxy:
+  enabled: true
+  type: NodePort
+  http:
+    enabled: true
+    servicePort: 80
+    containerPort: 8000
+    nodePort: 32080
+
+admin:
+  enabled: false

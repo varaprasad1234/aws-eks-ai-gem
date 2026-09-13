@@ -1,0 +1,17 @@
+prometheus:
+  prometheusSpec:
+    enableRemoteWriteReceiver: true
+    storageSpec:
+      volumeClaimTemplate:
+        spec:
+          storageClassName: gp3
+          resources:
+            requests:
+              storage: 20Gi
+
+grafana:
+  adminPassword: "adminpassword123"
+  persistence:
+    enabled: true
+    storageClassName: gp3
+    size: 10Gi
